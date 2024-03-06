@@ -22,10 +22,10 @@ class StoreCountryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:countries',
             'currencies' => 'required',
             'region' => 'required',
-            'population' => 'required'
+            'population' => 'required|numeric'
         ];
     }
 }

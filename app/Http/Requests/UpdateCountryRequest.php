@@ -25,7 +25,7 @@ class UpdateCountryRequest extends FormRequest
             'name' => 'required|unique:countries',
             'currencies' => 'required',
             'region' => 'required',
-            'population' => 'required'
+            'population' => 'required|numeric'
         ];
     }
 }

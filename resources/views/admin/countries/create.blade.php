@@ -7,6 +7,11 @@
 @stop
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="col-6">
         @include('partials.admin.errors')
         <form action="{{ route('countries.store') }}" method="post">

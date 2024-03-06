@@ -7,7 +7,9 @@
 @stop
 
 @section('content')
-    <table class="table table-bordered">
+    <a class="btn btn-dark" href="{{ route('countries.create') }}">Adauga</a>
+
+    <table class="table table-bordered mt-3">
         <thead>
             <tr>
                 <th>#</th>
@@ -27,8 +29,8 @@
                     <td>{{ $country->region }}</td>
                     <td>{{ $country->population }}</td>
                     <td>
-                        <a href="{{ route('admin.countries.edit') }}" class="btn btn-dark">Edit</a>
-                        <a href="{{ route('admin.countries.edit') }}" class="btn btn-dark">Show</a>
+                        <a href="{{ route('countries.edit', ['country'=>$country->id]) }}" class="btn btn-dark">Edit</a>
+                        <a href="{{ route('countries.edit', ['country'=>$country->id]) }}" class="btn btn-dark">Show</a>
                     </td>
                 </tr>
             @empty
