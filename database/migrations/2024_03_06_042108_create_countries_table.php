@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('currencies');
+            $table->string('currencies')->nullable();
             $table->string('region');
             $table->integer('population');
             $table->timestamps();

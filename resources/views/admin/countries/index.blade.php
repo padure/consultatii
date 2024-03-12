@@ -30,7 +30,7 @@
                     <td>{{ $country->population }}</td>
                     <td>
                         <a href="{{ route('countries.edit', ['country'=>$country->id]) }}" class="btn btn-dark">Edit</a>
-                        <a href="{{ route('countries.edit', ['country'=>$country->id]) }}" class="btn btn-dark">Show</a>
+                        <a href="{{ route('countries.show', ['country'=>$country->id]) }}" class="btn btn-dark">Show</a>
                     </td>
                 </tr>
             @empty
@@ -42,6 +42,7 @@
             @endforelse
         </tbody>
     </table>
+    {{ $countries->links() }}
 @stop
 
 @section('css')

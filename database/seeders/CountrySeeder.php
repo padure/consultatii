@@ -15,10 +15,12 @@ class CountrySeeder extends Seeder
     public function run(): void
     {
         $response = Http::get('https://restcountries.com/v3.1/all');
-        foreach ($response->json() as $country){
+        foreach (json_decode($response) as $country){
             Country::create([
-                "name" => $country["name"]["official"],
-                "currencies" => $country["currencies"]["common"],
+                "name" => $country->name->official,
+                "currencies" => !empty($country->currencies)?reset($country->currencies)->name:null,
+                "region" => $country->region,
+                "population" => $country->population
             ]);
         }
     }

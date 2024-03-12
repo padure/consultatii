@@ -11,6 +11,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::prefix('admin')->group(function () {
     Route::resource('countries', CountryController::class)->middleware('auth');
 });
+
