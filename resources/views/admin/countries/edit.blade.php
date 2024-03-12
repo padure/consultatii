@@ -15,6 +15,7 @@
     <div class="col-6">
         @include('partials.admin.errors')
         <form action="{{ route('countries.update', ['country'=>$country->id]) }}" method="post">
+            @method("PUT")
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label"></label>

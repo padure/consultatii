@@ -22,7 +22,7 @@ class UpdateCountryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique:countries',
+            'name' => 'required',
             'currencies' => 'required',
             'region' => 'required',
             'population' => 'required|numeric'
